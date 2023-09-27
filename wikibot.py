@@ -1,8 +1,20 @@
-import wikipedia
+
+import click
+from mylib.bot import scrape
 
 
-def scrape(name, length = 2):
-    results = wikipedia.summary(name, sentences = length)
-    return results
 
-print(scrape("Facebook"))
+@click.command()
+@click.option("--name", help="Web page we want to scrape")
+
+
+
+def cli(name):
+    results = scrape(name)
+    click.echo(click.style(f"{results}", bg = "blue", fg = "green"))
+
+
+if __name__ == "__main__":
+    cli()
+
+
