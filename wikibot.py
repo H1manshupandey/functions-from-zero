@@ -9,7 +9,7 @@ from mylib.bot import scrape
 
 
 
-def cli(name):
+def cli(name = "Microsoft"):
     results = scrape(name)
     click.echo(click.style(f"{results}", bg = "blue", fg = "green"))
 
